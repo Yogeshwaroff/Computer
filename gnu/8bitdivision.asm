@@ -1,0 +1,17 @@
+NOP  
+LDA 8500  
+MOV B, A  
+LDA 8501  
+MVI C, 00  
+
+LOOP: CMP B  
+JC LOOP1  
+SUB B  
+INR C  
+JMP LOOP  
+
+LOOP1: STA 8502  
+MOV A, C  
+STA 8503  
+RST 1  
+HLT  
